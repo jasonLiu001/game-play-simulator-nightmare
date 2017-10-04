@@ -1,8 +1,8 @@
-import {AutoInvest} from "../../../models/AutoInvest";
-import {Config} from "../../../config/Config";
-import {GlobalVariable} from "../../../models/GlobalVariable";
+import {AutoInvest} from "../../models/AutoInvest";
+import {Config} from "../../config/Config";
+import {GlobalVariable} from "../../models/GlobalVariable";
 import Promise = require('bluebird');
-import {LotteryDbService} from "../../dbservices/DBSerivice";
+import {LotteryDbService} from "../dbservices/DBSerivice";
 
 
 let fs = require('fs'),

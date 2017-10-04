@@ -17,11 +17,11 @@ export const SITE_URL: string = 'https://123.jn707.com';
  */
 export const CONFIG_CONST = {
     //登录用户名
-    username: 'wangjackie',
+    username: '',
     //登录密码
-    password: '86liu5229147678j',
+    password: '',
     //系统设置 是否显示浏览器窗口
-    isShowBrowser: false,
+    isShowBrowser: true,
     //开奖延迟时间，单位为秒
     openTimeDelaySeconds: 60,
     //自动检查定时器 时间间隔 单位为毫秒ms
@@ -58,10 +58,6 @@ export class Config {
     public static currentSelectedAwardMode: number = Config.awardModel.feng;
     //开奖号更新计时器
     public static awardTimer: any = null;
-    //投注重试计时器
-    public static investRetryTimer: any = null;
-    //投注重试计数器
-    public static investRetryCount: number = 0;
     //超级鹰验证码解密参数
     public captchaDecorder: CaptchaDecoderInfo = {
         user: CONFIG_CONST.username,

@@ -1,7 +1,7 @@
-import {Config, CONFIG_CONST, SITE_URL} from "../../../config/Config";
+import {Config, CONFIG_CONST, SITE_URL} from "../../config/Config";
 import Promise = require('bluebird');
-import {ResponseData} from "../../../models/ResponseData";
-import {CaptchaDecoderService} from "../../captcha/CaptchaDecoderService";
+import {ResponseData} from "../../models/ResponseData";
+import {CaptchaDecoderService} from "../captcha/CaptchaDecoderService";
 import Nightmare = require('nightmare');
 
 let path = require('path'),
@@ -22,9 +22,9 @@ export class NightmareLoginService {
     public getCaptchaCodeString(nightmare: any, config: Config): Promise<string> {
         log.info('正在破解登录验证码...');
         return nightmare
-            .goto(SITE_URL+'/Login')
+            .goto(SITE_URL + '/Login')
             .wait(500)
-            .inject('js', path.join(__dirname, "../../../", "lib/jquery-3.2.1.js"))
+            .inject('js', path.join(__dirname, "../../", "lib/jquery-3.2.1.js"))
             .wait(() => {
                 let btnLogin = $('#login');
                 return btnLogin.length > 0;

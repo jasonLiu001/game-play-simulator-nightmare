@@ -1,11 +1,11 @@
 import {Config, CONFIG_CONST} from './config/Config';
 import {LotteryDbService} from "./services/dbservices/DBSerivice";
-import {NightmareLoginService} from "./services/platform/nightmare/NightmareLoginService";
+import {NightmareLoginService} from "./services/platform/NightmareLoginService";
 import Promise = require('bluebird');
 import Nightmare = require('nightmare');
 import {ErrorService} from "./services/error/ErrorService";
 import {AwardService} from "./services/award/AwardService";
-import {NightmarePlatformService} from "./services/platform/nightmare/NightmarePlatformService";
+import {NightmarePlatformService} from "./services/platform/NightmarePlatformService";
 import {InvestService} from "./services/invest/InvestService";
 let nightmarePlugin = require('./plugins/Index');
 let log4js = require('log4js');
@@ -58,7 +58,7 @@ export class NightmareApp {
             .then(() => {
                 //启动更新奖号任务 奖号更新成功后执行自动投注
                 awardService.start(nightmare, lotteryDbService, config, () => {
-                    investService.executeAutoInvest(nightmare, null, lotteryDbService, config);
+                    investService.executeAutoInvest(nightmare, lotteryDbService, config);
                 });
             })
             .catch((err) => {
