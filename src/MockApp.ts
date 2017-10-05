@@ -3,16 +3,12 @@ import {LotteryDbService} from "./services/dbservices/DBSerivice";
 import Promise = require('bluebird');
 import {MockInvestService} from "./services/invest/MockInvestService";
 import {AwardService} from "./services/award/AwardService";
-import {InvestService} from "./services/invest/InvestService";
-import {ErrorService} from "./services/error/ErrorService";
 let Request = require('request');
 
 let log4js = require('log4js');
 log4js.configure('./config/log4js.json');
 
 let log = log4js.getLogger('MockApp'),
-    investService = new InvestService(),
-    errorService = new ErrorService(),
     config = new Config(),
     lotteryDbService = new LotteryDbService(),//奖号服务
     awardService = new AwardService(),
