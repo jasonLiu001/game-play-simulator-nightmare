@@ -2,8 +2,8 @@
  * 超级鹰 http 接口(上传)，node.js 示例代码  http://www.chaojiying.com/
  * 注意：需要安装restler : npm install restler
  */
-import {ResponseData} from "../../models/ResponseData";
-import {Config} from "../../config/Config";
+import {ResponseData} from "../models/ResponseData";
+import {Config} from "../config/Config";
 import Promise = require('bluebird');
 
 let fs = require('fs'),

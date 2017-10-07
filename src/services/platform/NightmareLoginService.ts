@@ -1,7 +1,7 @@
 import {Config, CONFIG_CONST, SITE_URL} from "../../config/Config";
 import Promise = require('bluebird');
 import {ResponseData} from "../../models/ResponseData";
-import {CaptchaDecoderService} from "../captcha/CaptchaDecoderService";
+import {CaptchaDecoderService} from "../CaptchaDecoderService";
 import Nightmare = require('nightmare');
 
 let path = require('path'),

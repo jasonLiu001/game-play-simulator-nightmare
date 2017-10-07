@@ -2,7 +2,6 @@ import {AutoInvest} from "../../models/AutoInvest";
 import {Config} from "../../config/Config";
 import {GlobalVariable} from "../../models/GlobalVariable";
 import Promise = require('bluebird');
-import {LotteryDbService} from "../dbservices/DBSerivice";
 
 
 let fs = require('fs'),
@@ -64,13 +63,13 @@ export class NightmarePlatformService {
      *
      * 执行投注
      */
-    public autoInvest(nightmare: any, config: Config, lotteryDbService: LotteryDbService, investModel: AutoInvest, moneyDoubleCount: number = 1): Promise<any> {
+    public autoInvest(nightmare: any, investModel: AutoInvest, moneyDoubleCount: number = 1): Promise<any> {
         log.info('正在买号...');
         return nightmare.click(investModel.ele_btnHouSan)
             .wait(500)
             .click(investModel.ele_btnHouSanZhiXuan)
             .wait(500)
-            .type(investModel.ele_textSelectedHouSanNumber, Config.currentInvestNumbers)
+            .type(investModel.ele_textSelectedHouSanNumber, '345,567,990,223')
             .type(investModel.ele_textMoneyDoubleCount, '')
             .type(investModel.ele_textMoneyDoubleCount, moneyDoubleCount)
             .select(investModel.ele_awardModel, String(Config.currentSelectedAwardMode))
