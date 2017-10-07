@@ -52,7 +52,6 @@ export class Config {
     public globalVariable: GlobalVariable = {
         last_Period: null, //上期期号 程序运行时初始化
         last_PrizeNumber: null, //上期开奖号码 程序运行时初始化
-        nextPeriodInvestTime: null, //下期投注时间 程序运行时初始化
         current_Peroid: null, //当前投注期号 程序运行时初始化
         currentAccoutBalance: 100//当前账户余额 程序运行时初始化
     };
