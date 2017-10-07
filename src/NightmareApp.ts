@@ -1,9 +1,9 @@
 import {Config, CONFIG_CONST} from './config/Config';
-import {NightmareLoginService} from "./services/platform/NightmareLoginService";
+import {NightmareLoginService} from "./services/NightmareLoginService";
 import Promise = require('bluebird');
 import Nightmare = require('nightmare');
 import {ErrorService} from "./services/ErrorService";
-import {NightmarePlatformService} from "./services/platform/NightmarePlatformService";
+import {NightmarePlatformService} from "./services/NightmarePlatformService";
 let nightmarePlugin = require('./plugins/Index');
 let log4js = require('log4js');
 log4js.configure('./config/log4js.json');
