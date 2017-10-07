@@ -11,7 +11,7 @@ log4js.configure('./config/log4js.json');
 //导入所有插件
 nightmarePlugin.install(Nightmare);
 
-let log = log4js.getLogger('NightmareApp'),
+let log = log4js.getLogger('App'),
     config = new Config(),
     loginService = new NightmareLoginService(),
     errorService = new ErrorService(),
@@ -27,7 +27,7 @@ let log = log4js.getLogger('NightmareApp'),
         allowRunningInsecureContent: true //允许在https的页面中调用http的资源
     });
 
-export class NightmareApp {
+export class App {
 
     /**
      *
@@ -61,5 +61,5 @@ export class NightmareApp {
     }
 }
 
-let app = new NightmareApp();
+let app = new App();
 app.start();

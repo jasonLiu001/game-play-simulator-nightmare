@@ -1,5 +1,5 @@
 {
-  "main": "NightmareApp.js",
+  "main": "App.js",
   "dependencies": {
     "bluebird": "^3.5.0",
     "nightmare": "^2.10.0",
@@ -9,10 +9,8 @@
   },
   "scripts": {
     "grunt": "grunt",
-    "linux:mock": "npm run grunt && cd dist && xvfb-run -a --server-args=\"-screen 0 1024x768x24\" node ./MockApp.js",
-    "linux:start": "npm run grunt && cd dist && xvfb-run -a --server-args=\"-screen 0 1024x768x24\" node ./NightmareApp.js",
-    "win:mock": "npm run grunt && cd dist && node ./MockApp.js",
-    "win:start": "npm run grunt && cd dist && node ./NightmareApp.js"
+    "linux:start": "npm run grunt && cd dist && xvfb-run -a --server-args=\"-screen 0 1024x768x24\" node ./App.js",
+    "win:start": "npm run grunt && cd dist && node ./App.js"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.6",
