@@ -31,16 +31,10 @@ export class ErrorService {
 
         if (error) {
             let msg = "程序启动时遇到错误，已退出！";
-            if (nightmare) {
-                nightmare.end(() => {
-                    log.error(msg);
-                    log.error(error);
-                });
-            } else {
+            nightmare.end(() => {
                 log.error(msg);
                 log.error(error);
-            }
-
+            });
         }
     }
 }

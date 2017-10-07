@@ -19,29 +19,22 @@ export class NightmarePlatformService {
     public initGlobalVariablesFromPage(nightmare: any, config: Config): Promise<GlobalVariable> {
         return nightmare
             .evaluate((config) => {
-                let globalVar: GlobalVariable = new GlobalVariable();
                 //获取上期开奖号码
-                globalVar.last_PrizeNumber = $(config.ele_lastPrizeNumber.wang).text()
+                config.globalVariable.last_PrizeNumber = $(config.ele_lastPrizeNumber.wang).text()
                     + $(config.ele_lastPrizeNumber.qian).text()
                     + $(config.ele_lastPrizeNumber.bai).text()
                     + $(config.ele_lastPrizeNumber.shi).text()
                     + $(config.ele_lastPrizeNumber.ge).text();
 
                 //上期期号
-                globalVar.last_Period = $(config.ele_divLastPrizePeriodNumber).text();
+                config.globalVariable.last_Period = $(config.ele_divLastPrizePeriodNumber).text();
                 //本期期号
-                globalVar.current_Peroid = $(config.ele_divPrizePeriodNumber).text();
+                config.globalVariable.current_Peroid = $(config.ele_divPrizePeriodNumber).text();
                 //当前账号余额
-                globalVar.currentAccoutBalance = Number($(config.ele_currentAccountBalance).text());
+                config.globalVariable.currentAccoutBalance = Number($(config.ele_currentAccountBalance).text());
 
-                return globalVar;
-            }, config)
-            .then((initData) => {
-                config.globalVariable.last_PrizeNumber = initData.last_PrizeNumber;
-                config.globalVariable.last_Period = initData.last_Period;
-                config.globalVariable.current_Peroid = initData.current_Peroid;
-                config.globalVariable.currentAccoutBalance = initData.currentAccoutBalance;
-            });
+                return config;
+            }, config);
     }
 
     /**
