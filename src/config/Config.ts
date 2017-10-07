@@ -17,9 +17,9 @@ export const SITE_URL: string = 'https://123.jn707.com';
  */
 export const CONFIG_CONST = {
     //登录用户名
-    username: 'wangjackie',
+    username: '',
     //登录密码
-    password: '86liu5229147678j',
+    password: '',
     //系统设置 是否显示浏览器窗口
     isShowBrowser: true
 };
