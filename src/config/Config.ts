@@ -17,21 +17,11 @@ export const SITE_URL: string = 'https://123.jn707.com';
  */
 export const CONFIG_CONST = {
     //登录用户名
-    username: '',
+    username: 'wangjackie',
     //登录密码
-    password: '',
+    password: '86liu5229147678j',
     //系统设置 是否显示浏览器窗口
-    isShowBrowser: true,
-    //开奖延迟时间，单位为秒
-    openTimeDelaySeconds: 60,
-    //自动检查定时器 时间间隔 单位为毫秒ms
-    autoCheckTimerInterval: 20000,
-    //三星奖金
-    awardPrice: 1954,
-    //需要获取的历史号码数量
-    historyCount: 3,
-    //目标盈利金额 单位为元 该值的设置 必须加上初始的账号余额才行 比如：初始100，盈利20，改值为120
-    maxWinMoney: 115
+    isShowBrowser: true
 };
 
 /**
