@@ -46,18 +46,10 @@ export class Config {
         feng: 100,
         li: 1000
     };
-    //数据库文件路径
-    public static dbPath: string = path.resolve(__dirname, "..", "data.db");
     //保存的验证码图片本地路径
     public static captchaImgSavePath: string = path.resolve(__dirname, "..", "captcha.jpeg");
-    //正式需要投注的号码
-    public static currentInvestNumbers: string = '';
-    //当前已经实际投注的期数
-    public static currentInvestTotalCount: number = 0;
     //当期选择的奖金模式
     public static currentSelectedAwardMode: number = Config.awardModel.feng;
-    //开奖号更新计时器
-    public static awardTimer: any = null;
     //超级鹰验证码解密参数
     public captchaDecorder: CaptchaDecoderInfo = {
         user: CONFIG_CONST.username,
@@ -113,8 +105,6 @@ export class Config {
     public ele_divLastPrizePeriodNumber: string = "#_gameissue_ago";
     //UI账号当前剩余金额
     public ele_currentAccountBalance: string = "body > div.top > div.head-a > div > ul > li.show-money > a > span";
-    //UI刷新当前账号余额按钮
-    public ele_btnRefreshMoneyAccount: string = "body > div.top > div.head-a > div > ul > li.show-money > a > i";
 
     //玩法类型
     public playMode: PlayMode = {
@@ -122,8 +112,6 @@ export class Config {
         two: 'two',//二星
         one: 'one'//一星
     };
-    //当前玩法类型
-    public currentSelectedPlayMode: string = this.playMode.three;
 
     /**
      *
