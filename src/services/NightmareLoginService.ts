@@ -24,7 +24,7 @@ export class NightmareLoginService {
         return nightmare
             .goto(SITE_URL + '/Login')
             .wait(500)
-            .inject('js', path.join(__dirname, "../../", "lib/jquery-3.2.1.js"))
+            .inject('js', path.join(__dirname, "../", "lib/jquery-3.2.1.js"))
             .wait(() => {
                 let btnLogin = $('#login');
                 return btnLogin.length > 0;
