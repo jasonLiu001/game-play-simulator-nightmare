@@ -75,7 +75,6 @@ export class Config {
         ele_textSelectedHouSanNumber: "#bet_text",
         ele_textMoneyDoubleCount: "#_game_bmultiple",
         ele_awardModel: "#game-unit",
-        awardMode: Config.awardModel,
         ele_btnQuickBuy: "#mashangtouzhu > a",
         ele_divConfirmLayer: "#layui-layer3",
         ele_btnBuyConfirm: "#layui-layer3 > div.layui-layer-btn.layui-layer-btn- > a"
@@ -94,13 +93,6 @@ export class Config {
     public ele_divLastPrizePeriodNumber: string = "#_gameissue_ago";
     //UI账号当前剩余金额
     public ele_currentAccountBalance: string = "body > div.top > div.head-a > div > ul > li.show-money > a > span";
-
-    //玩法类型
-    public playMode: PlayMode = {
-        three: 'three',//三星
-        two: 'two',//二星
-        one: 'one'//一星
-    };
 
     /**
      *
