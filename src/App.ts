@@ -37,7 +37,7 @@ export class App {
     public start(): void {
         log.info('程序已启动，持续监视中...');
         //破解验证码
-        loginService.getCaptchaCodeString(nightmare, config)
+        loginService.getCaptchaCodeString(nightmare)
             .then((captchaCodeString) => {
                 //登录
                 return loginService.login(nightmare, config, captchaCodeString);
@@ -56,7 +56,7 @@ export class App {
             })
             .catch((err) => {
                 //启动失败后结束electron进程
-                errorService.appErrorHandler(nightmare, log, err, config);
+                errorService.appErrorHandler(nightmare, log, err);
             });
     }
 }

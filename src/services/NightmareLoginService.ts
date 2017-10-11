@@ -1,4 +1,4 @@
-import {Config, CONFIG_CONST, SITE_URL} from "../config/Config";
+import {Config, CONFIG_CONST} from "../config/Config";
 import Promise = require('bluebird');
 import {ResponseData} from "../models/ResponseData";
 import {CaptchaDecoderService} from "./CaptchaDecoderService";
@@ -19,20 +19,20 @@ export class NightmareLoginService {
      * 根据验证码图片 ，返回图片中对应字符
      * *
      */
-    public getCaptchaCodeString(nightmare: any, config: Config): Promise<string> {
+    public getCaptchaCodeString(nightmare: any): Promise<string> {
         log.info('正在破解登录验证码...');
         return nightmare
-            .goto(SITE_URL + '/Login')
+            .goto(CONFIG_CONST.siteUrl + '/Login')
             .wait(500)
             .inject('js', path.join(__dirname, "../", "lib/jquery-3.2.1.js"))
             .wait(() => {
                 let btnLogin = $('#login');
                 return btnLogin.length > 0;
             })
-            .saveCaptchaCode(SITE_URL + '/verifyCode?' + Math.random())
+            .saveCaptchaCode(CONFIG_CONST.siteUrl + '/verifyCode?' + Math.random())
             .wait(500)
             .then(() => {
-                return captchaService.decoder(config);
+                return captchaService.decoder();
             })
             .then((parserRes: ResponseData) => {
                 log.info('验证码破解成功. 验证码字符:%s', parserRes.pic_str);

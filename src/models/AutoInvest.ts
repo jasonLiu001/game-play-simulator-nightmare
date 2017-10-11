@@ -1,4 +1,3 @@
-import {AwardMode} from "./AwardMode";
 /**
  *
  * @summary 自动投注模型
